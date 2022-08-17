@@ -1,0 +1,175 @@
+<%- include("./include/header") %>
+<div class="subVisual" id="subVisual04">
+  <div class="titleBox">
+    <h2 class="subTitle">Customer</h2>
+    <p>우리는, 도시경관사업의 최고기업이 되고 시장을 선도한다!</p>
+  </div>
+  <nav id="lnb">
+    <div class="container">
+      <a href="/" class="home">HOME</a>
+      <div class="depth01 menu">
+        <button>company</button>
+        <%- include("./include/depth01") %>
+      </div>
+      <div class="depth02 menu">
+        <button>사업개요</button>
+        <%- include("./include/lnb01") %>
+      </div>
+    </div>
+  </nav>
+</div>
+<div class="subContents">
+  <h3 class="contentsTitle">견적문의</h3>
+  <div class="contents" id="estimate">
+    <div class="container">
+      <div class="board">
+        <div class="table list">
+          <div class="thead">
+            <span scope="column" class="column" style="width:5%">번호</span>
+            <span scope="column" class="column">제목</span>
+            <span scope="column" class="column" style="width:15%">작성자</span>
+            <span scope="column" class="column" style="width:15%">날짜</span>
+          </div>
+          <ul class="tbody">
+            <li class="row">
+              <span class="no column">14</span>
+              <span class="title column">
+                <a href="view.html">제목이 들어갑니다. 가나다마가나다마가나다마가나다마</a>
+              </span>
+              <span class="writer column" data-label="작성자">관리자</span>
+              <span class="date column" data-label="날짜">2022-06-22</span>
+            </li>
+            <li class="row">
+              <span class="no column">14</span>
+              <span class="title column">
+                <a href="">제목이 들어갑니다.</a>
+              </span>
+              <span class="writer column" data-label="작성자">관리자</span>
+              <span class="date column" data-label="날짜">2022-06-22</span>
+            </li>
+            <li class="row">
+              <span class="no column">14</span>
+              <span class="title column">
+                <a href="">제목이 들어갑니다.</a>
+              </span>
+              <span class="writer column" data-label="작성자">관리자</span>
+              <span class="date column" data-label="날짜">2022-06-22</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+
+
+      <!-- <table class="boardTable">
+        <colgroup>
+        <col style="width: 5%" />
+        <col />
+        <col style="width: 15%" />
+        <col style="width: 15%" />
+        </colgroup>
+        <thead>
+          <tr>
+            <th scope="column">번호</th>
+            <th scope="column">제목</th>
+            <th scope="column">작성자</th>
+            <th scope="column">날짜</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td class="subject">제목이 들어갑니다.</td>
+            <td>관리자</td>
+            <td>2022.05.18</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td class="subject">제목이 들어갑니다.</td>
+            <td>관리자</td>
+            <td>2022.05.18</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td class="subject">제목이 들어갑니다.</td>
+            <td>관리자</td>
+            <td>2022.05.18</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td class="subject">제목이 들어갑니다.</td>
+            <td>관리자</td>
+            <td>2022.05.18</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td class="subject">제목이 들어갑니다.</td>
+            <td>관리자</td>
+            <td>2022.05.18</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td class="subject">제목이 들어갑니다.</td>
+            <td>관리자</td>
+            <td>2022.05.18</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td class="subject">제목이 들어갑니다.</td>
+            <td>관리자</td>
+            <td>2022.05.18</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td class="subject">제목이 들어갑니다.</td>
+            <td>관리자</td>
+            <td>2022.05.18</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td class="subject">제목이 들어갑니다.</td>
+            <td>관리자</td>
+            <td>2022.05.18</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td class="subject">제목이 들어갑니다.</td>
+            <td>관리자</td>
+            <td>2022.05.18</td>
+          </tr>
+        </tbody>
+      </table> -->
+      <div class="pagination">
+        <a href="" class="first"></a>
+        <a href="" class="prev"></a>
+        <ul>
+          <li><a href="" class="active">1</a></li>
+          <li><a href="">2</a></li>
+          <li><a href="">3</a></li>
+          <li><a href="">4</a></li>
+          <li><a href="">5</a></li>
+          <li class="hide"><a href="">6</a></li>
+          <li class="hide"><a href="">7</a></li>
+          <li class="hide"><a href="">8</a></li>
+          <li class="hide"><a href="">9</a></li>
+          <li class="hide"><a href="">10</a></li>
+        </ul>
+        <a href="" class="next"></a>
+        <a href="" class="last"></a>
+      </div>
+      <form action="" method="" class="searchForm">
+        <select name="" id="searchCategory">
+          <option value="">제목</option>
+          <option value="">작성자</option>
+          <option value="">내용</option>
+        </select>
+        
+        <input type="text" name="" id="searchTxt">
+        <button>검색</button>
+      </form>
+      </div>
+      
+    </div>
+  </div>
+</div>
+<%- include("./include/footer") %>

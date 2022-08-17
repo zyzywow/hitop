@@ -1,0 +1,138 @@
+<footer id="footer">
+  <div class="utilMenu">
+    <ul>
+      <li><a href="">이용약관</a></li>
+      <li>
+        <a href=""><strong>개인정보보호정책</strong></a>
+      </li>
+      <li><a href="">사이트맵</a></li>
+      <li><a href="">온라인견적문의</a></li>
+    </ul>
+  </div>
+  <div class="addressBox">
+    <div class="container">
+      <div class="fLogo">
+        <img src="../images/fLogo.png" alt="" />
+      </div>
+      <div class="address">
+        <p class="title">하이탑 : 서울 송파구 성내천로 14길 13 (3층)</p>
+        <p class="info">
+          <span>대표전화 : 070-7715-4400</span>
+          <span>이메일 : hitop4400@hanmail.net</span>
+          <span>사업자번호 : 402-81-83259</span>
+        </p>
+        <p class="copyright">Copyright ⓒ 2018 HITOP. All rights reserved</p>
+      </div>
+      <!-- prettier-ignore -->
+      <div class="tel">
+        <span>고객만족센터</span>
+        <strong>070-7715-4400</strong>
+      </div>
+    </div>
+  </div>
+</footer>
+<script> 
+  const btnAll = $(".btnAll")
+  const header = $("#header")
+  const gnb = $("#gnb")
+  const depth01 = $("#gnb .depth01")
+  const depth02 = $("#gnb .depth02")
+
+  const lnbDepth01 = $("#lnb .depth01 ul")
+  const lnbDepth02 = $("#lnb .depth02 ul")
+
+  const lnbButton = $("#lnb .menu button")
+
+  const lnb = $("#lnb");
+
+  //let lnbOffsetStop = lnb.offset().top;
+  let lnbTop = 350;
+
+  lnbButton.on("click",function() {
+    if(header.hasClass("mobile")) {
+    const ul = $(this).next();
+    ul.slideToggle();
+    }
+  })
+  
+  btnAll.on("click",function(e) {
+  header.toggleClass("open")
+  depth02.delay(500).slideUp(); // 리턴값이jquery 같으면 여러개이어서쓸수있음, method chanining 메써드를 엮어서씀 리턴값이 섞이면안됨
+  return false;
+  })
+
+  depth01.on("click",function() {
+    if(header.hasClass("mobile")){
+    const depth02 = $(this).next() //클릭하고있는 자신 depth02 $(this) 
+    // depth02.toggle(); //show();hide();
+    depth02.slideToggle()
+    // depth02.fadeToggle()
+    
+    return false;
+    // if(w>1200) {
+    //   const w = $(window).outerWidth();
+    //   depth02.removeProp("mobile");
+    // }
+    }
+
+    // ctrl + alt + L 콘솔찍기
+    // alt + shift + d 콘솔삭제
+    // alt + shift + c 주석
+    // alt + shift + u 주석삭제
+})
+
+$(window).on("resize", function() {
+  // console.log("vanilla===",window.innerWidth);
+  const w = $(window).outerWidth();
+  // lnbTop = lnb.offset().top;
+  lnbTop = $(".subVisual").height() - 50;
+  // subVisual높이가 안변하면 가장좋지만 한두번바뀌면 그 높이값만 적어서 적용하면되는데
+  // 만약 높이가 clamp로 실시간으로 변하면 위처럼 높이를 직접 불러와서 lnb높이를 빼주고 적용
+  
+  // if(w<=960) {
+  //   lnbTop = 250;
+  // } else {
+  //   lnbTop = 350;
+  // }
+  
+  if(w<=1200) {
+    header.addClass("mobile");
+    
+  } else {
+      header.removeClass("mobile open");
+      depth02.removeAttr("style")
+      lnbDepth01.removeAttr("style")
+      lnbDepth02.removeAttr("style") 
+    }
+ 
+    
+  })
+  $(window).on("scroll",function() {
+    const st = $(window).scrollTop();
+    if(st>lnbTop) {
+      lnb.addClass("fixed");
+    } else {
+      lnb.removeClass("fixed");
+    }
+   
+    
+  })
+  $(window).trigger("resize")
+
+
+// window.addEventListener("resize", function() {
+//   // console.log("vanilla===",window.innerWidth);
+//   const w = window.innerWidth;
+//   if(w<1200) {
+//     header.addClass("mobile");
+//   } else {
+//       header.removeClass("mobile");
+//     }
+//   })
+  // $(window).on("resize",function() {
+  //   console.log($(window).width()) //jquery 스크롤바 미포함넓이나옴
+  // })
+  // window.dispatchEvent(new Event("resize"));
+</script>
+</body>
+</html>

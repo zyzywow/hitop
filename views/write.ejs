@@ -1,0 +1,106 @@
+<%- include("./include/header") %>
+<div class="subVisual" id="subVisual04">
+  <div class="titleBox">
+    <h2 class="subTitle">Customer</h2>
+    <p>우리는, 도시경관사업의 최고기업이 되고 시장을 선도한다!</p>
+  </div>
+  <nav id="lnb">
+    <div class="container">
+      <a href="/" class="home">HOME</a>
+      <div class="depth01 menu">
+        <button>company</button>
+        <%- include("./include/depth01") %>
+      </div>
+      <div class="depth02 menu">
+        <button>사업개요</button>
+        <%- include("./include/lnb01") %>
+      </div>
+    </div>
+  </nav>
+</div>
+<div class="subContents">
+  <h3 class="contentsTitle">견적문의</h3>
+  <div class="contents" id="">
+    <div class="container">
+      <div class="board">
+        <div class="table write">
+          <div class="thead">
+            <span scope="column" class="column" style="width: 20%"></span>
+            <span scope="column" class="column"></span>
+          </div>
+          <ul class="tbody">
+            <li class="row">
+              <span class="column th required">제목</span>
+              <div class="column">
+                <input type="text" placeholder="제목을 입력해주세요." />
+              </div>
+            </li>
+            <li class="row">
+              <span class="column th required">이름</span>
+              <div class="column">
+                <input type="text" placeholder="이름을 입력해주세요." />
+              </div>
+            </li>
+            <li class="row">
+              <span class="column th">이메일</span>
+              <div class="column">
+                <input type="text" placeholder="이메일을 입력해주세요." />
+              </div>
+            </li>
+            <li class="row">
+              <span class="column th required">연락처</span>
+              <div class="column tel">
+                <div class="item">
+                  <input type="text" placeholder="010" />
+                  <span class="seperation">-</span>
+                  <input type="text" placeholder="" />
+                  <span class="seperation">-</span>
+                  <input type="text" placeholder="" />
+                </div>
+              </div>
+            </li>
+            <li class="row">
+              <span class="column th required">내용</span>
+              <div class="column">
+                <textarea name="" id="" cols="30" rows="10" placeholder="내용을 입력해주세요."></textarea>
+              </div>
+            </li>
+            <li class="row">
+              <span class="column th">첨부파일</span>
+              <div class="column">
+                <div class="fileBox">
+                  <input type="text" class="file" placeholder="첨부파일" />
+                  <label><input type="file" /><span>파일찾기</span></label>
+                </div>
+              </div>
+            </li>
+            <li class="row">
+              <span class="column th required">비밀번호</span>
+              <div class="column password">
+                <div class="item">
+                  <input type="text" />
+                  <span class="alert">수정 및 삭제시 필요합니다.</span>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="btns">
+          <a href="" class="btn confirm">확인</a>
+          <a href="" class="btn cancel">취소</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const file = document.querySelector(".fileBox input[type='file']");
+  const fakeFileTxt = document.querySelector(".fileBox .file");
+  file.addEventListener("change", function () {
+    const fileName = file.value;
+    fakeFileTxt.value = fileName;
+    console.log(fileName);
+  });
+</script>
+<%- include("./include/footer") %>
