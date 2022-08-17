@@ -4,12 +4,15 @@ const path = require("path");
 const ejs = require("ejs");
 const cors = require("cors");
 const axios = require("axios");
+
 const corsOption = {
   origin: "127.0.0.1:5503",
   credential: true,
 };
 
 app.set("view engine", "ejs");
+app.set("port", process.env.PORT || 8099);
+const PORT = app.get("port");
 app.use(
   cors({
     origin: "http://127.0.0.1:5503",
@@ -104,6 +107,6 @@ app.use((err, req, res, next) => {
   res.status(500).render("error", { msg: "An unknown error occurred." });
 });
 
-app.listen(8099, () => {
-  console.log(`8099에서 서버 대기중`);
+app.listen(PORT, () => {
+  console.log(`${PORT}에서 서버 대기중`);
 });
