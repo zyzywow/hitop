@@ -31,7 +31,7 @@ app.get("/", (req, res) => {
 });
 app.get("/introduce", (req, res) => {
   // console.log(myName);
-  res.render("introduce");
+  res.render("introduce", { title: "회사소개", mainTitle: "company" });
 });
 app.get("/greeting", (req, res) => {
   res.render("greeting");
